@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Skill Roadmap</title>
+  <script src="https://cdn.jsdelivr.net/npm/mk-mind-elixir@1.1.5/dist/MindElixir.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mind-elixir@0.18.0/dist/mind-elixir.css">
+
+  <style>
+    body {
+      font-family: sans-serif;  
+      text-align: center;
+    }
+    
+    #map-container {
+      height: 600px;
+      width: 80%;
+      margin: 30px auto;
+      border: 1px solid #ccc;
+    }
+    body {
+  font-family: sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.back-link {
+  display: block;
+  margin: 20px;
+  color: #1c0808;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+#contentWrapper {
+  display: flex;
+  gap: 20px;
+  width: 90%;
+  margin: 30px auto;
+}
+
+#map-container {
+  flex: 7;
+  height: 600px;
+  border: 1px solid #ccc;
+}
+
+#videosContainerWrapper {
+  flex: 3;
+  overflow-y: auto;
+  max-height: 600px;
+  text-align: left;
+}
+
+#videosContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.video-card img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.video-card p {
+  font-size: 0.9rem;
+  margin: 5px 0 0;
+}
+
+
+
+  </style>
+</head>
+<body>
+
+   <a href="roadmap.html" class="back-link">← Back to Roadmap</a>
+  <h2 id="roadmapTitle">Loading Roadmap...</h2>
+
+  <div id="contentWrapper">
+    <div id="map-container"></div>
+
+    <div id="videosContainerWrapper">
+      <h2>Related Videos</h2>
+      <div id="videosContainer"></div>
+    </div>
+  </div>
+
+  <button id="downloadBtn">📥 Download Roadmap</button>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const apiKey = 'AIzaSyA4aUPXg2mQixXi-3vEexfEO_kgXAXMq04';  // Replace with your actual API key
+  const params = new URLSearchParams(window.location.search);
+  const skill = params.get('skill');
+
+  if (!skill) return;
+
+  const mind = new MindElixir({
+    el: '#map-container',
+    direction: MindElixir.SIDE,
+    draggable: true,
+    contextMenu: true,
+    toolBar: true,
+    nodeMenu: true,
+    keypress: true,
+  });
+
+  // Store loaded roadmap data here for download
+  let currentRoadmapData = null;
+
+  document.getElementById('roadmapTitle').innerText = `${skill.toUpperCase()} Roadmap`;
+
+  const fileName = skill.toLowerCase().replace(/\s+/g, '-') + '.json';
+
+  fetch(fileName)
+    .then(res => {
+      if (!res.ok) throw new Error();
+      return res.json();
+    })
+    .then(data => {
+      currentRoadmapData = data;
+      mind.init(data);
+       mind.scale(0.4);
+    })
+    .catch(() => {
+      document.getElementById('roadmapTitle').innerText = `❌ No roadmap found for "${skill}"`;
+    });
+  // Fetch YouTube videos
+  
+  fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&type=playlist&maxResults=5&q=${encodeURIComponent(skill + ' tutorial')}&key=${apiKey}`)
+    .then(res => res.json())
+    .then(data => {
+      const videosContainer = document.getElementById('videosContainer');
+      videosContainer.innerHTML = '';
+
+      if (!data.items || data.items.length === 0) {
+        videosContainer.innerHTML = '<p>No related videos found.</p>';
+        return;
+      }
+
+      data.items.forEach(item => {
+  const playlistId = item.id.playlistId;
+  if (!playlistId) return;
+
+  const title = item.snippet.title;
+  const thumbnail = item.snippet.thumbnails.medium.url;
+
+  const videoElem = document.createElement('div');
+  videoElem.className = 'video-card';
+  videoElem.innerHTML = `
+    <a href="https://www.youtube.com/playlist?list=${playlistId}" target="_blank" title="${title}">
+      <img src="${thumbnail}" alt="${title}" />
+      <p><strong>${title}</strong></p>
+    </a>
+  `;
+  videosContainer.appendChild(videoElem);
+});
+
+    })
+    .catch(error => {
+      console.error('YouTube API error:', error);
+    });
+
+  // Download roadmap
+  document.getElementById('downloadBtn').addEventListener('click', () => {
+    if (!currentRoadmapData) {
+      alert('No roadmap data loaded to download!');
+      return;
+    }
+
+    const downloadFileName = document.getElementById('roadmapTitle').innerText
+      .toLowerCase()
+      .replace(/\s+/g, '-') + '.json';
+
+    const jsonStr = JSON.stringify(currentRoadmapData, null, 2);
+    const blob = new Blob([jsonStr], { type: 'application/json' });
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = downloadFileName;
+    link.click();
+  });
+});
+</script>
+</body>
+</html>

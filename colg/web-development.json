@@ -1,0 +1,175 @@
+{
+  "nodeData": {
+    "id": "root",
+    "topic": "Web Development",
+    "children": [
+      {
+        "topic": "(1) Introduction to Web Development",
+        "children": [
+          { "topic": "What is Web Development?" },
+          { "topic": "Frontend vs Backend" },
+          { "topic": "Web Browsers & How They Work" },
+          { "topic": "Understanding Client-Server Architecture" }
+        ]
+      },
+      {
+        "topic": "(2) HTML – Structure of Web Pages",
+        "children": [
+          { "topic": "HTML Syntax & Tags" },
+          { "topic": "Forms & Input Fields" },
+          { "topic": "Semantic HTML (header, nav, main, etc.)" },
+          { "topic": "HTML Media (Images, Video, Audio)" },
+          { "topic": "HTML Attributes (id, class, href, etc.)" }
+        ]
+      },
+      {
+        "topic": "(3) CSS – Styling the Web",
+        "children": [
+          { "topic": "CSS Syntax & Selectors" },
+          { "topic": "Box Model" },
+          { "topic": "Flexbox & Grid" },
+          { "topic": "Responsive Design (Media Queries)" },
+          { "topic": "CSS Positioning & Z-index" },
+          { "topic": "Animations & Transitions" }
+        ]
+      },
+      {
+        "topic": "(4) JavaScript – Interactivity",
+        "children": [
+          { "topic": "JS Basics (Variables, Data Types)" },
+          { "topic": "Control Flow (if, loops, switch)" },
+          { "topic": "Functions & Scope" },
+          { "topic": "DOM Manipulation" },
+          { "topic": "Events & Event Listeners" },
+          { "topic": "JSON & AJAX" },
+          { "topic": "ES6+ Features (let, const, arrow functions)" }
+        ]
+      },
+      {
+        "topic": "(5) Version Control",
+        "children": [
+          { "topic": "What is Git?" },
+          { "topic": "Git Basics (init, commit, push, pull)" },
+          { "topic": "Using GitHub" },
+          { "topic": "Branching & Merging" }
+        ]
+      },
+      {
+        "topic": "(6) Package Managers & Build Tools",
+        "children": [
+          { "topic": "npm & yarn" },
+          { "topic": "Webpack Basics" },
+          { "topic": "Babel (Transpiling)" },
+          { "topic": "Using Scripts in package.json" }
+        ]
+      },
+      {
+        "topic": "(7) Frontend Frameworks",
+        "children": [
+          {
+            "topic": "React.js",
+            "children": [
+              { "topic": "JSX" },
+              { "topic": "Props & State" },
+              { "topic": "Hooks (useState, useEffect)" },
+              { "topic": "Component Lifecycle" },
+              { "topic": "React Router" }
+            ]
+          },
+          { "topic": "Other Frameworks: Angular, Vue.js" }
+        ]
+      },
+      {
+        "topic": "(8) Backend Development",
+        "children": [
+          {
+            "topic": "Node.js",
+            "children": [
+              { "topic": "Creating Server with HTTP Module" },
+              { "topic": "Modules & NPM Packages" }
+            ]
+          },
+          {
+            "topic": "Express.js",
+            "children": [
+              { "topic": "Routing & Middleware" },
+              { "topic": "Serving Static Files" },
+              { "topic": "API Creation (REST APIs)" }
+            ]
+          },
+          { "topic": "Authentication (JWT, OAuth)" },
+          { "topic": "Handling Sessions & Cookies" }
+        ]
+      },
+      {
+        "topic": "(9) Databases",
+        "children": [
+          {
+            "topic": "SQL Databases",
+            "children": [
+              { "topic": "MySQL Basics" },
+              { "topic": "CRUD Operations" },
+              { "topic": "Joins & Indexing" }
+            ]
+          },
+          {
+            "topic": "NoSQL Databases",
+            "children": [
+              { "topic": "MongoDB Basics" },
+              { "topic": "Schema Design" },
+              { "topic": "Mongoose with Node.js" }
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "(10) APIs & Web Services",
+        "children": [
+          { "topic": "RESTful APIs" },
+          { "topic": "HTTP Methods (GET, POST, PUT, DELETE)" },
+          { "topic": "Status Codes" },
+          { "topic": "Postman for API Testing" },
+          { "topic": "Async/Await & Fetch API" }
+        ]
+      },
+      {
+        "topic": "(11) Deployment",
+        "children": [
+          { "topic": "Hosting Platforms (Netlify, Vercel, Heroku)" },
+          { "topic": "Domain Names & DNS" },
+          { "topic": "SSL Certificates (HTTPS)" },
+          { "topic": "CI/CD Basics" }
+        ]
+      },
+      {
+        "topic": "(12) Advanced Topics",
+        "children": [
+          { "topic": "Progressive Web Apps (PWAs)" },
+          { "topic": "WebSockets (Real-time Apps)" },
+          { "topic": "GraphQL Basics" },
+          { "topic": "Serverless Architecture" },
+          { "topic": "Testing (Unit & Integration)" }
+        ]
+      },
+      {
+        "topic": "(13) Projects to Build",
+        "children": [
+          { "topic": "Portfolio Website" },
+          { "topic": "To-Do List App" },
+          { "topic": "Blog Platform" },
+          { "topic": "E-commerce Website" },
+          { "topic": "Chat Application" }
+        ]
+      },
+      {
+        "topic": "(14) Career Guidance",
+        "children": [
+          { "topic": "Freelancing vs Job" },
+          { "topic": "Open Source Contributions" },
+          { "topic": "Resume & Portfolio Tips" },
+          { "topic": "Interview Preparation" }
+        ]
+      }
+    ]
+  }
+}

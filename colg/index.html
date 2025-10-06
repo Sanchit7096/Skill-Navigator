@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Skill Navigator - Navigate Your Skills, Shape Your Future</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="nav-logo">
+      <span class="logo-text">Skill Navigator</span>
+    </div>
+    <div class="nav-menu">
+      <a href="index.html" class="nav-link active">Home</a>
+      <a href="roadmap.html" class="nav-link">Roadmap</a>
+    </div>
+      <nav>
+  <!-- <div id="auth-buttons">
+    <a href="loginin.html" class="login-btn">Login</a>
+    <a href="signup.html" class="signup-btn">Sign Up</a>
+  </div> -->
+
+  <div id="user-info" style="display: none;">
+    <i class="fa-solid fa-user"></i>
+    <span id="username">User</span>
+    <button id="logoutBtn">Logout</button>
+  </div>
+</nav>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<main class="main-content">
+  <div class="hero-section">
+    <div class="ai-badge">
+      <i class="fas fa-sparkles"></i>
+      <!-- AI-Powered Skill Discovery -->
+    </div>
+    <h1 class="hero-title">
+      Navigate Your Skills,<br>
+      <span class="gradient-text">Shape Your Future</span>
+    </h1>
+    <p class="hero-description">
+      Discover your potential with Youtube recommendaions,<br>
+      personalized learning paths, and career roadmaps that adapt to<br>
+      your unique journey.
+    </p>
+    <div class="hero-buttons">
+      <a href="roadmap.html" class="btn btn-secondary">
+        Start Journey
+        <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+  </div>
+</main>
+
+<!-- Explore Skills Section -->
+<main   id="skills-section"   class="main-content">
+  <div class="skills-section">
+    <h1 class="section-title gradient-text">Top-Rated Skills</h1>
+    <p class="section-description">
+     Discover trending skills and grow with smart learning paths built around YouTube's best content
+    </p>
+    
+    <div   class="skills-grid">
+      <div class="skill-card">
+        <div class="skill-header">
+          <div class="skill-icon design-icon"><i class="fas fa-palette"></i></div>
+          <span class="skill-level beginner">Beginner</span>
+        </div>
+        <h3 class="skill-title">UI/UX Design</h3>
+        <p class="skill-description">Learn user-centered design principles and create stunning interfaces</p>
+        <div class="skill-stats">
+          <div class="rating"><i class="fas fa-star"></i><span>4.7</span></div>
+          <span class="students">8,900 students</span>`
+        </div>
+        <div class="skill-footer">
+          <span class="duration">6 weeks</span>
+          <a href="#" class="learn-more-btn">Learn More</a>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-header">
+          <div class="skill-icon data-icon"><i class="fas fa-chart-line"></i></div>
+          <span class="skill-level intermediate">Intermediate</span>
+        </div>
+        <h3 class="skill-title">Data Analysis</h3>
+        <p class="skill-description">Analyze data to drive business decisions using modern tools and techniques</p>
+        <div class="skill-stats">
+          <div class="rating"><i class="fas fa-star"></i><span>4.9</span></div>
+          <span class="students">15,600 students</span>
+        </div>
+        <div class="skill-footer">
+          <span class="duration">10 weeks</span>
+          <a href="#" class="learn-more-btn">Learn More</a>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-header">
+          <div class="skill-icon pm-icon"><i class="fas fa-users"></i></div>
+          <span class="skill-level advanced">Advanced</span>
+        </div>
+        <h3 class="skill-title">Project Management</h3>
+        <p class="skill-description">Lead teams and deliver projects successfully with proven methodologies</p>
+        <div class="skill-stats">
+          <div class="rating"><i class="fas fa-star"></i><span>4.6</span></div>
+          <span class="students">7,200 students</span>
+        </div>
+        <div class="skill-footer">
+          <span class="duration">12 weeks</span>
+          <a href="#" class="learn-more-btn">Learn More</a>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-header">
+          <div class="skill-icon ml-icon"><i class="fas fa-brain"></i></div>
+          <span class="skill-level beginner">Beginner</span>
+        </div>
+        <h3 class="skill-title">Machine Learning</h3>
+        <p class="skill-description">Build intelligent systems and understand AI fundamentals</p>
+        <div class="skill-stats">
+          <div class="rating"><i class="fas fa-star"></i><span>4.8</span></div>
+          <span class="students">11,300 students</span>
+        </div>
+        <div class="skill-footer">
+          <span class="duration">14 weeks</span>
+          <a href="#" class="learn-more-btn">Learn More</a>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-header">
+          <div class="skill-icon marketing-icon"><i class="fas fa-bullhorn"></i></div>
+          <span class="skill-level intermediate">Intermediate</span>
+        </div>
+        <h3 class="skill-title">Digital Marketing</h3>
+        <p class="skill-description">Master online marketing strategies and grow your digital presence</p>
+        <div class="skill-stats">
+          <div class="rating"><i class="fas fa-star"></i><span>4.5</span></div>
+          <span class="students">9,800 students</span>
+        </div>
+        <div class="skill-footer">
+          <span class="duration">8 weeks</span>
+          <a href="#" class="learn-more-btn">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- FAQ Section -->
+<main class="main-content">
+  <div class="faq-section">
+    <h1 class="section-title gradient-text">Frequently Asked Questions</h1>
+    <p class="section-description">Everything you need to know about Skill Navigator</p>
+
+    <div class="faq-container">
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          <span>❓ What is Skill Navigator?</span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <p>Skill Navigator is a learning platform that helps you discover skill-based roadmaps and curated YouTube content to master any topic — from coding to design.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          <span>❓ How is this different from just searching YouTube?
+</span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <p>Instead of getting random results, Skill Navigator provides structured roadmaps and only the best video content, so you always know what to learn next..</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          <span>❓ Is Skill Navigator free to use?</span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <p>Yes! Skill Navigator is 100% free. You can explore roadmaps and watch all recommended videos without paying anything...</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          <span>❓ Are the roadmaps beginner-friendly? </span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <p>Absolutely! Each roadmap is designed to guide you step-by-step — whether you're just starting or want to go pro...</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          <span> ❓ What makes Skill Navigator different from other platforms?</span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <p>It gives you step-by-step roadmaps with the best YouTube videos — no random content, no confusion, and 100% free.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          <span>❓ Is Skill Navigator powered by AI?</span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <p>We currently offer smart curation based on user interests and topic tags. AI-based features like auto-recommendation and smart search are coming soon!.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-branding">
+      <p class="footer-text">Skill Navigator <br> Navigate your future, one skill at a time.</p>
+    </div>
+
+    <div class="footer-links">
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Skills</a></li>
+          <li><a href="#">Roadmap</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#">FAQs</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Help Center</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Use</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 Skill Navigator. All rights reserved.</p>
+  </div>
+
+</footer>
+<script type="module">
+    import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/11.8.1/firebase-auth.js";
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.8.1/firebase-app.js";
+    import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/11.8.1/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyAAGZ_ajxETsFFyox-mtbAhwu6FsGeC22E",
+      authDomain: "skill-navigator-7096.firebaseapp.com",
+      projectId: "skill-navigator-7096",
+      storageBucket: "skill-navigator-7096.firebasestorage.app",
+      messagingSenderId: "732968618404",
+      appId: "1:732968618404:web:325d8fb5bbc7659962d931"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const db = getFirestore(app);
+
+    const authButtons = document.getElementById("auth-buttons");
+    const userInfo = document.getElementById("user-info");
+    const username = document.getElementById("username");
+    const logoutBtn = document.getElementById("logoutBtn");
+
+    onAuthStateChanged(auth, async (user) => {
+      if (user) {
+        authButtons.style.display = "none";
+        userInfo.style.display = "flex";
+
+        const docRef = doc(db, "users", user.uid);
+        const userSnap = await getDoc(docRef);
+        if (userSnap.exists()) {
+          username.innerText = userSnap.data().fullName || "User";
+        }
+      } else {
+        authButtons.style.display = "flex";
+        userInfo.style.display = "none";
+      }
+    });
+
+    logoutBtn.addEventListener("click", async () => {
+      await signOut(auth);
+      window.location.href = "loginin.html";
+    });
+
+</script>
+
+
+
+<script src="faq.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,101 @@
+{
+  "nodeData": {
+    "id": "root",
+    "topic": "Cyber Security",
+    "children": [
+      {
+        "topic": "(1) Basics of Cyber Security",
+        "children": [
+          { "topic": "Introduction to Cyber Security" },
+          { "topic": "Types of Threats (Malware, Phishing, etc.)" },
+          { "topic": "CIA Triad: Confidentiality, Integrity, Availability" },
+          { "topic": "Cyber Laws & Ethics" }
+        ]
+      },
+      {
+        "topic": "(2) Networking Fundamentals",
+        "children": [
+          { "topic": "Network Models (OSI, TCP/IP)" },
+          { "topic": "IP Addressing & Subnetting" },
+          { "topic": "Ports and Protocols (TCP/UDP, HTTP, HTTPS)" },
+          { "topic": "Firewalls & Routers" }
+        ]
+      },
+      {
+        "topic": "(3) Operating Systems Knowledge",
+        "children": [
+          { "topic": "Windows OS Internals" },
+          { "topic": "Linux Basics (Commands, Filesystem)" },
+          { "topic": "Shell Scripting Basics" },
+          { "topic": "User & Permissions Management" }
+        ]
+      },
+      {
+        "topic": "(4) Cryptography",
+        "children": [
+          { "topic": "Encryption vs Decryption" },
+          { "topic": "Symmetric vs Asymmetric Encryption" },
+          { "topic": "Hashing Algorithms (MD5, SHA-256)" },
+          { "topic": "Digital Signatures & Certificates" }
+        ]
+      },
+      {
+        "topic": "(5) Security Tools",
+        "children": [
+          { "topic": "Wireshark (Packet Analysis)" },
+          { "topic": "Nmap (Network Scanning)" },
+          { "topic": "Metasploit (Exploitation Framework)" },
+          { "topic": "Burp Suite (Web Vulnerability Scanner)" },
+          { "topic": "John the Ripper (Password Cracker)" }
+        ]
+      },
+      {
+        "topic": "(6) Vulnerability and Threat Management",
+        "children": [
+          { "topic": "Types of Vulnerabilities" },
+          { "topic": "Common Vulnerabilities (OWASP Top 10)" },
+          { "topic": "CVEs and Vulnerability Databases" },
+          { "topic": "Patch Management" }
+        ]
+      },
+      {
+        "topic": "(7) Penetration Testing",
+        "children": [
+          { "topic": "Phases of Penetration Testing" },
+          { "topic": "Reconnaissance (Passive & Active)" },
+          { "topic": "Exploitation Techniques" },
+          { "topic": "Reporting and Documentation" }
+        ]
+      },
+      {
+        "topic": "(8) Web Application Security",
+        "children": [
+          { "topic": "OWASP Top 10 Overview" },
+          { "topic": "SQL Injection" },
+          { "topic": "Cross-Site Scripting (XSS)" },
+          { "topic": "Cross-Site Request Forgery (CSRF)" },
+          { "topic": "Security Headers" }
+        ]
+      },
+      {
+        "topic": "(9) Incident Response & Management",
+        "children": [
+          { "topic": "Incident Response Lifecycle" },
+          { "topic": "SIEM Tools (e.g., Splunk, ELK Stack)" },
+          { "topic": "Log Analysis and Monitoring" },
+          { "topic": "Disaster Recovery Planning" }
+        ]
+      },
+      {
+        "topic": "(10) Career Paths in Cyber Security",
+        "children": [
+          { "topic": "Security Analyst" },
+          { "topic": "Penetration Tester" },
+          { "topic": "Security Engineer" },
+          { "topic": "SOC Analyst" },
+          { "topic": "Cyber Forensics Expert" }
+        ]
+      }
+    ]
+  }
+}

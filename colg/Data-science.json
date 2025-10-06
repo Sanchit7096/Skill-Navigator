@@ -1,0 +1,166 @@
+{
+  "nodeData": {
+    "id": "root",
+    "topic": "Data Science",
+    "children": [
+      {
+        "topic": "(1) Introduction to Data Science",
+        "children": [
+          { "topic": "What is Data Science?" },
+          { "topic": "Lifecycle of a Data Science Project" },
+          { "topic": "Roles: Data Analyst, Data Engineer, Data Scientist" },
+          { "topic": "Applications of Data Science" }
+        ]
+      },
+      {
+        "topic": "(2) Mathematics & Statistics",
+        "children": [
+          { "topic": "Linear Algebra (Vectors, Matrices)" },
+          { "topic": "Probability & Combinatorics" },
+          { "topic": "Descriptive Statistics (Mean, Median, Mode)" },
+          { "topic": "Inferential Statistics (Hypothesis Testing)" },
+          { "topic": "Bayes Theorem & Conditional Probability" }
+        ]
+      },
+      {
+        "topic": "(3) Programming with Python",
+        "children": [
+          { "topic": "Python Basics (Variables, Loops, Functions)" },
+          { "topic": "Data Structures (Lists, Tuples, Dicts)" },
+          { "topic": "File Handling" },
+          { "topic": "OOP Concepts in Python" },
+          { "topic": "Virtual Environments & Pip" }
+        ]
+      },
+      {
+        "topic": "(4) Data Manipulation",
+        "children": [
+          {
+            "topic": "NumPy",
+            "children": [
+              { "topic": "Arrays and Matrix Operations" },
+              { "topic": "Broadcasting & Vectorization" }
+            ]
+          },
+          {
+            "topic": "Pandas",
+            "children": [
+              { "topic": "Series and DataFrames" },
+              { "topic": "Data Cleaning (nulls, duplicates)" },
+              { "topic": "Merging, Joining, GroupBy" },
+              { "topic": "Time Series Handling" }
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "(5) Data Visualization",
+        "children": [
+          {
+            "topic": "Matplotlib & Seaborn",
+            "children": [
+              { "topic": "Line, Bar, Pie, Histogram" },
+              { "topic": "Heatmaps, Pairplots, Distplots" }
+            ]
+          },
+          { "topic": "Plotly & Dash (for interactive charts)" },
+          { "topic": "Tableau / Power BI (Optional)" }
+        ]
+      },
+      {
+        "topic": "(6) Data Wrangling & Preprocessing",
+        "children": [
+          { "topic": "Handling Missing Values" },
+          { "topic": "Outlier Detection" },
+          { "topic": "Feature Encoding (Label, One-Hot)" },
+          { "topic": "Feature Scaling (Standard, MinMax)" },
+          { "topic": "Text Cleaning (NLP Preprocessing)" }
+        ]
+      },
+      {
+        "topic": "(7) Machine Learning",
+        "children": [
+          { "topic": "Supervised vs Unsupervised Learning" },
+          { "topic": "Train/Test Split, Cross Validation" },
+          {
+            "topic": "Common Algorithms",
+            "children": [
+              { "topic": "Linear & Logistic Regression" },
+              { "topic": "Decision Trees & Random Forests" },
+              { "topic": "KNN, SVM" },
+              { "topic": "Naive Bayes" },
+              { "topic": "Clustering (K-Means, Hierarchical)" }
+            ]
+          },
+          { "topic": "Model Evaluation (Accuracy, Precision, Recall, F1)" },
+          { "topic": "Confusion Matrix & ROC Curve" }
+        ]
+      },
+      {
+        "topic": "(8) Deep Learning",
+        "children": [
+          { "topic": "Neural Networks Basics" },
+          { "topic": "Activation Functions (ReLU, Sigmoid)" },
+          { "topic": "Loss Functions & Backpropagation" },
+          {
+            "topic": "Frameworks",
+            "children": [
+              { "topic": "TensorFlow Basics" },
+              { "topic": "Keras (High-Level API)" },
+              { "topic": "PyTorch Overview" }
+            ]
+          },
+          { "topic": "Convolutional Neural Networks (CNNs)" },
+          { "topic": "Recurrent Neural Networks (RNNs, LSTMs)" }
+        ]
+      },
+      {
+        "topic": "(9) Natural Language Processing (NLP)",
+        "children": [
+          { "topic": "Text Cleaning & Tokenization" },
+          { "topic": "TF-IDF & Word Embeddings" },
+          { "topic": "Sentiment Analysis" },
+          { "topic": "Named Entity Recognition (NER)" },
+          { "topic": "Transformers (BERT, GPT Overview)" }
+        ]
+      },
+      {
+        "topic": "(10) Model Deployment",
+        "children": [
+          { "topic": "Saving Models with Pickle/Joblib" },
+          { "topic": "Building REST API with Flask" },
+          { "topic": "Deploy on Heroku / Streamlit" },
+          { "topic": "Docker Basics for ML Projects" }
+        ]
+      },
+      {
+        "topic": "(11) Big Data & Cloud",
+        "children": [
+          { "topic": "Introduction to Big Data" },
+          { "topic": "Hadoop & Spark Basics" },
+          { "topic": "Working with AWS/GCP for Data Science" },
+          { "topic": "Cloud Databases (BigQuery, Redshift)" }
+        ]
+      },
+      {
+        "topic": "(12) Projects to Build",
+        "children": [
+          { "topic": "Data Cleaning Project" },
+          { "topic": "EDA on COVID-19 Dataset" },
+          { "topic": "Movie Recommendation System" },
+          { "topic": "Customer Churn Prediction" },
+          { "topic": "Sentiment Analysis App" }
+        ]
+      },
+      {
+        "topic": "(13) Career Prep",
+        "children": [
+          { "topic": "Resume for Data Science" },
+          { "topic": "Portfolio on GitHub" },
+          { "topic": "Kaggle Competitions" },
+          { "topic": "Mock Interviews" }
+        ]
+      }
+    ]
+  }
+}

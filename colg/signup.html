@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Join Skill Navigator</title>
+    <link rel="stylesheet" href="signup.css" />
+    <script>
+      function goBack() {
+        window.location.href = "index.html";
+      }
+    </script>
+</head>
+<body>
+   
+    <div class="form-container">
+   
+          <a href="#" class="back-link">
+        <button onclick="goBack()"> ← Back to Home</button>
+    </a>
+
+        <h1 class="form-title">Join Skill Navigator</h1>
+        <p class="form-subtitle">Start your learning journey today</p>
+
+        <form>
+            <div class="form-group">
+                <label class="form-label" for="fullname">Full Name</label>
+                <input type="text" id="fullname" class="form-input" placeholder="Enter your full name" required />
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" for="email">Email</label>
+                <input type="email" id="email" class="form-input" placeholder="your@email.com" required />
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" for="password">Password</label>
+                <div class="password-input-container">
+                    <input type="password" id="password" class="form-input" placeholder="Create a password" required />
+                    <button type="button" class="password-toggle">👁</button>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" for="confirm-password">Confirm Password</label>
+                <div class="password-input-container">
+                    <input type="password" id="confirm-password" class="form-input" placeholder="Confirm your password" required />
+                    <button type="button" class="password-toggle">👁</button>
+                </div>
+            </div>
+
+            <div class="checkbox-container">
+                <input type="checkbox" id="terms" class="checkbox" required />
+                <label for="terms" class="checkbox-label">
+                    I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+                </label>
+            </div>
+
+            <button type="submit" id="Creat-account" class="submit-btn">Create Account</button>
+        </form>
+
+        <p class="signin-link">
+            Already have an account? <a href="login.html">Sign in</a>
+        </p>
+    </div>
+
+    <!-- signup.html (partial relevant part) -->
+<script type="module">
+  import { register } from './auth.js';
+
+  const form = document.querySelector('form');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const fullname = document.getElementById('fullname').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const password = document.getElementById('password').value;
+    const confirmPassword = document.getElementById('confirm-password').value;
+    const termsChecked = document.getElementById('terms').checked;
+
+    if (password !== confirmPassword) {
+      alert("Passwords do not match!");
+      return;
+    }
+
+    if (!termsChecked) {
+      alert("Please agree to the terms and privacy policy.");
+      return;
+    }
+
+    try {
+      await register(email, password, fullname);
+      alert("Account created successfully!");
+      window.location.href = 'loginin.html';
+    } catch (error) {
+      alert("Error: " + error.message);
+    }
+  });
+</script>
+
+
+    <script type="module" src="auth.js"></script>
+</body>
+</html>

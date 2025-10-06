@@ -1,0 +1,155 @@
+{
+  "nodeData": {
+    "id": "root",
+    "topic": "React.js",
+    "children": [
+      {
+        "topic": "(1) Prerequisites",
+        "children": [
+          { "topic": "HTML Basics" },
+          { "topic": "CSS Fundamentals (Flexbox, Grid)" },
+          { "topic": "JavaScript ES6+ (let/const, arrow functions, template literals)" },
+          { "topic": "Functions, Arrays, Objects" },
+          { "topic": "DOM Manipulation Basics" }
+        ]
+      },
+      {
+        "topic": "(2) Environment Setup",
+        "children": [
+          { "topic": "Install Node.js & npm" },
+          { "topic": "Install VS Code & Extensions" },
+          { "topic": "Setup with Vite or Create React App" },
+          { "topic": "Basic Git Commands" }
+        ]
+      },
+      {
+        "topic": "(3) JSX Basics",
+        "children": [
+          { "topic": "What is JSX" },
+          { "topic": "Embedding Expressions" },
+          { "topic": "JSX Rules" },
+          { "topic": "Rendering Lists" }
+        ]
+      },
+      {
+        "topic": "(4) Components & Props",
+        "children": [
+          { "topic": "Functional Components" },
+          { "topic": "Props & Default Props" },
+          { "topic": "Children Prop" },
+          { "topic": "Component Composition" }
+        ]
+      },
+      {
+        "topic": "(5) State & Events",
+        "children": [
+          { "topic": "useState Hook" },
+          { "topic": "Event Handling (onClick, onChange)" },
+          { "topic": "Controlled vs Uncontrolled Inputs" },
+          { "topic": "Form Handling" }
+        ]
+      },
+      {
+        "topic": "(6) Hooks",
+        "children": [
+          { "topic": "useEffect (Side Effects, Data Fetching)" },
+          { "topic": "useRef (References, Persistent Values)" },
+          { "topic": "useContext (Global State)" },
+          { "topic": "useReducer (Complex State)" },
+          { "topic": "Custom Hooks" }
+        ]
+      },
+      {
+        "topic": "(7) Routing",
+        "children": [
+          { "topic": "react-router-dom Setup" },
+          { "topic": "Route & Link Components" },
+          { "topic": "Dynamic Routes & URL Params" },
+          { "topic": "Nested Routes" },
+          { "topic": "Protected Routes" }
+        ]
+      },
+      {
+        "topic": "(8) Styling in React",
+        "children": [
+          { "topic": "CSS Modules" },
+          { "topic": "Styled Components" },
+          { "topic": "Tailwind CSS" },
+          { "topic": "Inline Styles" }
+        ]
+      },
+      {
+        "topic": "(9) Data Fetching",
+        "children": [
+          { "topic": "fetch API" },
+          { "topic": "Axios" },
+          { "topic": "Loading & Error States" },
+          { "topic": "React Query / SWR" }
+        ]
+      },
+      {
+        "topic": "(10) State Management",
+        "children": [
+          { "topic": "Context API" },
+          { "topic": "Redux Toolkit" },
+          { "topic": "Zustand" },
+          { "topic": "MobX" }
+        ]
+      },
+      {
+        "topic": "(11) Forms & Validation",
+        "children": [
+          { "topic": "Controlled Forms" },
+          { "topic": "Form Validation" },
+          { "topic": "react-hook-form" },
+          { "topic": "Yup Schema Validation" }
+        ]
+      },
+      {
+        "topic": "(12) Testing",
+        "children": [
+          { "topic": "Jest Basics" },
+          { "topic": "React Testing Library" },
+          { "topic": "Snapshot Testing" },
+          { "topic": "Mocking APIs" }
+        ]
+      },
+      {
+        "topic": "(13) Performance Optimization",
+        "children": [
+          { "topic": "React.memo" },
+          { "topic": "useMemo & useCallback" },
+          { "topic": "Code Splitting (lazy & Suspense)" },
+          { "topic": "Avoiding Re-renders" }
+        ]
+      },
+      {
+        "topic": "(14) TypeScript with React",
+        "children": [
+          { "topic": "Setup TypeScript Project" },
+          { "topic": "Typing Props & State" },
+          { "topic": "Typing Hooks" },
+          { "topic": "Generics in React" }
+        ]
+      },
+      {
+        "topic": "(15) Build & Deployment",
+        "children": [
+          { "topic": "Production Build" },
+          { "topic": "Deploy to Vercel" },
+          { "topic": "Deploy to Netlify" },
+          { "topic": "GitHub Pages Deployment" }
+        ]
+      },
+      {
+        "topic": "(16) Career Paths in React Development",
+        "children": [
+          { "topic": "Frontend Developer" },
+          { "topic": "React Native Developer" },
+          { "topic": "Full-Stack Developer" },
+          { "topic": "UI/UX Engineer" }
+        ]
+      }
+    ]
+  }
+}
