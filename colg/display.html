@@ -113,6 +113,136 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const fileName = skill.toLowerCase().replace(/\s+/g, '-') + '.json';
 
+  // Function to extract keywords from roadmap data
+  function extractKeywordsFromRoadmap(roadmapData) {
+    const keywords = new Set();
+    
+    function extractFromNode(node) {
+      if (node.topic) {
+        // Extract technical terms from topic
+        const topicWords = node.topic.toLowerCase()
+          .replace(/[^\w\s]/g, ' ') // Remove special chars
+          .replace(/\d+/g, '') // Remove numbers
+          .split(/\s+/)
+          .filter(word => word.length > 2); // Filter short words
+        
+        topicWords.forEach(word => {
+          // Common technical terms and technologies
+          const technicalTerms = [
+            'html', 'css', 'javascript', 'js', 'react', 'vue', 'angular',
+            'node', 'nodejs', 'express', 'mongodb', 'mysql', 'postgresql',
+            'database', 'api', 'rest', 'graphql', 'git', 'github', 'gitlab',
+            'npm', 'yarn', 'webpack', 'babel', 'docker', 'kubernetes',
+            'aws', 'azure', 'gcp', 'cloud', 'devops', 'cicd', 'testing',
+            'jest', 'mocha', 'cypress', 'selenium', 'frontend', 'backend',
+            'fullstack', 'mobile', 'android', 'ios', 'flutter', 'reactnative',
+            'python', 'java', 'c++', 'csharp', 'php', 'ruby', 'go', 'rust',
+            'typescript', 'scala', 'kotlin', 'swift', 'dart', 'r', 'matlab',
+            'tensorflow', 'pytorch', 'keras', 'scikit', 'pandas', 'numpy',
+            'machinelearning', 'deeplearning', 'ai', 'datascience', 'analytics',
+            'tableau', 'powerbi', 'excel', 'sql', 'nosql', 'firebase',
+            'authentication', 'authorization', 'jwt', 'oauth', 'security',
+            'cybersecurity', 'encryption', 'blockchain', 'web3', 'ethereum',
+            'smartcontracts', 'nft', 'cryptocurrency', 'bitcoin', 'solidity',
+            'ui', 'ux', 'design', 'figma', 'sketch', 'adobe', 'photoshop',
+            'illustrator', 'xd', 'prototype', 'wireframe', 'responsive',
+            'bootstrap', 'tailwind', 'materialui', 'antd', 'chakraui',
+            'nextjs', 'nuxtjs', 'gatsby', 'angular', 'svelte', 'preact',
+            'deployment', 'hosting', 'vercel', 'netlify', 'heroku', 'aws',
+            'digitalocean', 'linux', 'ubuntu', 'windows', 'macos', 'bash',
+            'powershell', 'shell', 'scripting', 'automation', 'cron',
+            'monitoring', 'logging', 'performance', 'optimization',
+            'microservices', 'architecture', 'patterns', 'agile', 'scrum',
+            'projectmanagement', 'jira', 'confluence', 'slack', 'teams'
+          ];
+          
+          // Check if word contains any technical term or is a technical term itself
+          if (technicalTerms.some(term => word.includes(term) || term.includes(word))) {
+            keywords.add(word);
+          }
+          
+          // Also add words that look like technologies (contain common patterns)
+          if (word.includes('js') || word.includes('.js') || word.includes('app') ||
+              word.includes('web') || word.includes('server') || word.includes('client') ||
+              word.includes('framework') || word.includes('library') || word.includes('tool')) {
+            keywords.add(word);
+          }
+        });
+      }
+      
+      if (node.children) {
+        node.children.forEach(child => extractFromNode(child));
+      }
+    }
+    
+    extractFromNode(roadmapData.nodeData);
+    return Array.from(keywords);
+  }
+
+  // Fetch YouTube playlists based on roadmap keywords
+  function fetchYouTubeVideos(keywords) {
+    const apiKey = 'AIzaSyA4aUPXg2mQixXi-3vEexfEO_kgXAXMq04';
+    const videosContainer = document.getElementById('videosContainer');
+    videosContainer.innerHTML = '<p>Loading relevant playlists...</p>';
+    
+    // Take first 3 keywords to avoid too many API calls
+    const selectedKeywords = keywords.slice(0, 3);
+    const videoPromises = [];
+    
+    selectedKeywords.forEach(keyword => {
+      const promise = fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&type=playlist&maxResults=3&q=${encodeURIComponent(keyword + ' full course tutorial complete')}&order=relevance&key=${apiKey}`)
+        .then(res => res.json())
+        .then(data => ({ keyword, data }));
+      videoPromises.push(promise);
+    });
+    
+    Promise.all(videoPromises)
+      .then(results => {
+        videosContainer.innerHTML = '';
+        
+        results.forEach(({ keyword, data }) => {
+          if (data.items && data.items.length > 0) {
+            // Add keyword header
+            const keywordHeader = document.createElement('h3');
+            keywordHeader.textContent = `${keyword.toUpperCase()} Playlists`;
+            keywordHeader.style.marginTop = '15px';
+            keywordHeader.style.marginBottom = '10px';
+            keywordHeader.style.color = '#333';
+            videosContainer.appendChild(keywordHeader);
+            
+            data.items.forEach(item => {
+              const playlistId = item.id.playlistId;
+              if (!playlistId) return;
+              
+              const title = item.snippet.title;
+              const thumbnail = item.snippet.thumbnails.medium.url;
+              const channel = item.snippet.channelTitle;
+              const videoCount = item.snippet.videoCount || 'Multiple';
+              
+              const videoElem = document.createElement('div');
+              videoElem.className = 'video-card';
+              videoElem.innerHTML = `
+                <a href="https://www.youtube.com/playlist?list=${playlistId}" target="_blank" title="${title}">
+                  <img src="${thumbnail}" alt="${title}" />
+                  <p><strong>${title}</strong></p>
+                  <p style="font-size: 0.8rem; color: #666;">${channel} • ${videoCount} videos</p>
+                </a>
+              `;
+              videosContainer.appendChild(videoElem);
+            });
+          }
+        });
+        
+        if (videosContainer.children.length === 0) {
+          videosContainer.innerHTML = '<p>No related playlists found.</p>';
+        }
+      })
+      .catch(error => {
+        console.error('YouTube API error:', error);
+        videosContainer.innerHTML = '<p>Error loading playlists.</p>';
+      });
+  }
+
   fetch(fileName)
     .then(res => {
       if (!res.ok) throw new Error();
@@ -122,44 +252,53 @@ document.addEventListener("DOMContentLoaded", () => {
       currentRoadmapData = data;
       mind.init(data);
        mind.scale(0.4);
+      
+      // Extract keywords and fetch videos
+      const keywords = extractKeywordsFromRoadmap(data);
+      if (keywords.length > 0) {
+        fetchYouTubeVideos(keywords);
+      } else {
+        // Fallback to playlist search if no keywords found
+        fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&type=playlist&maxResults=5&q=${encodeURIComponent(skill + ' full course tutorial complete')}&order=relevance&key=${apiKey}`)
+          .then(res => res.json())
+          .then(data => {
+            const videosContainer = document.getElementById('videosContainer');
+            videosContainer.innerHTML = '';
+
+            if (!data.items || data.items.length === 0) {
+              videosContainer.innerHTML = '<p>No related playlists found.</p>';
+              return;
+            }
+
+            data.items.forEach(item => {
+              const playlistId = item.id.playlistId;
+              if (!playlistId) return;
+
+              const title = item.snippet.title;
+              const thumbnail = item.snippet.thumbnails.medium.url;
+              const channel = item.snippet.channelTitle;
+              const videoCount = item.snippet.videoCount || 'Multiple';
+
+              const videoElem = document.createElement('div');
+              videoElem.className = 'video-card';
+              videoElem.innerHTML = `
+                <a href="https://www.youtube.com/playlist?list=${playlistId}" target="_blank" title="${title}">
+                  <img src="${thumbnail}" alt="${title}" />
+                  <p><strong>${title}</strong></p>
+                  <p style="font-size: 0.8rem; color: #666;">${channel} • ${videoCount} videos</p>
+                </a>
+              `;
+              videosContainer.appendChild(videoElem);
+            });
+          })
+          .catch(error => {
+            console.error('YouTube API error:', error);
+            document.getElementById('videosContainer').innerHTML = '<p>Error loading playlists.</p>';
+          });
+      }
     })
     .catch(() => {
       document.getElementById('roadmapTitle').innerText = `❌ No roadmap found for "${skill}"`;
-    });
-  // Fetch YouTube videos
-  
-  fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&type=playlist&maxResults=5&q=${encodeURIComponent(skill + ' tutorial')}&key=${apiKey}`)
-    .then(res => res.json())
-    .then(data => {
-      const videosContainer = document.getElementById('videosContainer');
-      videosContainer.innerHTML = '';
-
-      if (!data.items || data.items.length === 0) {
-        videosContainer.innerHTML = '<p>No related videos found.</p>';
-        return;
-      }
-
-      data.items.forEach(item => {
-  const playlistId = item.id.playlistId;
-  if (!playlistId) return;
-
-  const title = item.snippet.title;
-  const thumbnail = item.snippet.thumbnails.medium.url;
-
-  const videoElem = document.createElement('div');
-  videoElem.className = 'video-card';
-  videoElem.innerHTML = `
-    <a href="https://www.youtube.com/playlist?list=${playlistId}" target="_blank" title="${title}">
-      <img src="${thumbnail}" alt="${title}" />
-      <p><strong>${title}</strong></p>
-    </a>
-  `;
-  videosContainer.appendChild(videoElem);
-});
-
-    })
-    .catch(error => {
-      console.error('YouTube API error:', error);
     });
 
   // Download roadmap
